@@ -1,0 +1,46 @@
+<!doctype html>
+	
+<html lang="hu">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Local és remote </title>
+	</head>
+
+	<body>
+
+		<h3> Local legfontosabb parancsai </h3>
+		
+		Parancs					Mit csinál
+
+		git init			Új Git tároló létrehozása a mappában
+		git status			Megmutatja, mi változott a fájlokban
+		git add .			Minden módosított fájl hozzáadása a commit-hoz
+		git add <fájlnév>		Csak egy konkrét fájl hozzáadása
+		git commit -m "Üzenet"		Commit készítése megjegyzéssel
+		git log	Commit-ok 		Listázása
+		git diff			Különbségek megjelenítése a változtatások között
+		git branch			Ágak listázása
+		git branch <ág_név>		Új ág létrehozása
+		git checkout <ág_név>		Átváltás másik ágra
+		git merge <ág_név>		Egy másik ág összevonása az aktuálissal
+		git stash			Ideiglenesen elmenti a nem commitolt változtatásokat
+		git stash pop			Visszahozza a stash-ben tárolt változtatásokat
+	
+
+		<h3> Remote legfontosabb parancsai </h3>
+
+			Parancs							Mit csinál
+
+		git remote add origin <repo_URL>		Távoli repository (GitHub) összekapcsolása
+		git remote -v					Megmutatja a beállított remote címeket
+		git push -u origin main				Feltölti a „main” ágat a GitHubra
+		git push					Frissítések feltöltése a GitHubra
+		git pull					Legfrissebb változások letöltése GitHubról
+		git fetch					Változások letöltése, de nem egyesíti automatikusan
+		git clone <repo_URL>				GitHub repository letöltése a gépre
+		git push origin <branch>			Egy adott ág feltöltése
+		git pull origin <branch>			Egy adott ág letöltése
+	</body>
+
+</html>
