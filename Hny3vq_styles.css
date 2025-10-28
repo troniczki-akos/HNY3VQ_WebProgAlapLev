@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; padding:20px; }
+.table { border-collapse: collapse; width:100%; }
+.table th, .table td { border:1px solid #ccc; padding:8px; }
+.red { background:#f10f0f; }
+.baige { background:#f5f0e1; }
+.magenta { background:#f4d3ff; }
+.scroll { max-height:200px; overflow:auto; display:block; }
+.center { text-align:center; }

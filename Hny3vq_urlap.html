@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <title>Hny3vq - űrlap</title>
+  <style>
+    header, section, footer { display:block; padding:10px; margin:6px 0; border:1px solid #ddd; }
+    header { background:#f7f7f7; }
+    footer { background:#fafafa; font-size:0.9rem; }
+    label { display:block; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <header><h1>HTML5 Űrlap Hny3vq </h1></header>
+  <section>
+    <form id="myForm" action="feldolgozo.php" method="post" novalidate>
+      <label>Név (kötelező): <input name="nev" type="text" required placeholder="Vezetéknév Keresztnév" autofocus></label>
+      <label>PIN kód: <input name="pin" type="text" pattern="\d4" required placeholder="4 számjegy"></label>
+      <label>Kedvenc gyümölcs:
+        <input list="gyumolcsok" name="gyumolcs" placeholder="válassz vagy írj be">
+        <datalist id="gyumolcsok">
+          <option value="Alma ">
+          <option value="Banán">
+          <option value="Narancs">
+          <option value="Málna">
+          <option value="Eper">
+          <option value="Barack">
+          <option value="Körte">
+          <option value="Szilva">
+        </datalist>
+      </label>
+      <label>Életkor: <input name="eletkor" type="number" min="1" max="100" value="25"></label>
+      <label>Lábméret: <input name="lab" type="number" min="25" max="50" step="0.5" value="42"></label>
+      <label>Önbizalom: <input name="onbizalom" type="range" min="0" max="100" value="50"></label>
+    </form>
+    <!-- Gombok a form-on kívül -->
+    <div style="margin-top:12px;">
+      <button id="submitValidate">Elküld</button>
+      <button id="submitNoValidate">Elküld ellenőrzés nélkül</button>
+    </div>
+  </section>
+  <footer>
+    Forrás: <a href="https://html5doctor.com/" target="_blank" rel="noopener">https://html5doctor.com/</a>
+    Formátumok:<a href="https://html5doctor.com/" target="_blank" rel="noopener">https://www.html5pattern.com/</a>
+    JavaScript RegExp: <a href="https://www.w3schools.com/jsref/jsref_obj_regexp.asp" target="_blank" rel="noopener">https://www.w3schools.com/jsref/jsref_obj_regexp.asp</a>
+  </footer>
+
+<script>
+const form = document.getElementById('myForm');
+document.getElementById('submitValidate').addEventListener('click', ()=> {
+    // ellenőrzés után submit
+    if (form.checkValidity()) {
+        form.submit();
+    } else {
+        form.reportValidity();
+    }
+});
+document.getElementById('submitNoValidate').addEventListener('click', ()=> {
+    // validáció kihagyása és beküldés
+    form.removeAttribute('novalidate'); // biztosítsuk, hogy a szerver felé megy
+    form.submit();
+});
+</script>
+</body>
+</html>
